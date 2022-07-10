@@ -1,0 +1,43 @@
+<div class="row mt-5">
+  <div class="col-sm-8">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">your orders</h1>
+
+        <div class="contenar">
+          <!-- *ngFor="let AllProducts of AllProducts" -->
+          <div
+            class="card"
+            *ngFor="let i of productsAdded"
+            style="width: 18rem"
+          >
+            <img
+              class="card-img-top"
+              src="{{ i.item_image }}"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              {{ i.item_name }}
+              <p class="card-text">
+                <strong>price:{{ i.price }}</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" (click)="removecart()">
+          Clear Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">Amount ={{ Price }}</h1>
+        <h1 class="card-text">Discount Amount = {{ discount }}</h1>
+        <h1 class="card-text">Total Amount ={{ TotalAmount }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
